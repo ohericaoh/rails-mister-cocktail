@@ -1,0 +1,10 @@
+<h1>Create your recipe</h1>
+
+<div class="container">
+  <%= simple_form_for [@cocktail, @dose] do |f| %>
+    <%#= f.association :tag %>
+    <%#= f.collection :tag, Tag.all %>
+    <%= f.input :ingredient, collection: Ingredient.all, input_html: { multiple: true, class: 'multiple-select' }, include_hidden: false %>
+    <%= f.submit %>
+  <% end %>
+</div>
