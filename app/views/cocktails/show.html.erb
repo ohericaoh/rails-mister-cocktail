@@ -1,32 +1,31 @@
-<p>
-  <strong>Name:</strong>
-  <%= @cocktail.name %>
-</p>
-
-
-<%#= link_to 'Add Cocktail', new_cocktail_dose_path(@cocktial), class: "btn btn-success" %>
-
-
-<p>Dose:</p>
-<% @cocktail.doses.each do |dose| %>
-  <p><%= dose.description %> <%= dose.ingredient.name %>
-    <% end %>
-
-<%= simple_form_for [@cocktail, @dose] do |c| %>
-
-  <div class="form-inputs">
-    <%= c.input :description %>
-    <%= c.association :ingredient %>
-  </div>
-
-  <div class="form-actions">
-    <%= c.button :submit %>
-  </div>
-<% end %>
-
-
 <div>
-<%= link_to 'Back', cocktails_path, class: "btn btn-primary" %>
+<%= link_to 'Back to Homepage', cocktails_path, class: "btn btn-warning" %>
 </div>
 
+<div class="container mt-3">
+  <div class="jumbotron">
+    <h1 class="display-4"><%= @cocktail.name %></h1>
+    <hr class="my-4">
+    <p><strong>Recipe</strong>
+<% @cocktail.doses.each do |dose| %>
+  <p><%= dose.description %> <%= dose.ingredient.name %>
+    <%= link_to 'Delete', dose, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %></p>
+  </div>
+</div>
 
+<div class="form-container">
+
+  <%= simple_form_for [@cocktail, @dose] do |c| %>
+
+    <div class="form-inputs">
+      <%= c.input :description %>
+      <%= c.association :ingredient %>
+    </div>
+
+    <div class="form-actions btn btn-warning">
+      <%= c.button :submit %>
+    </div>
+  <% end %>
+
+</div>
