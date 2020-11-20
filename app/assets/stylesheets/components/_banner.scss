@@ -2,13 +2,14 @@
   background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), asset-url("dark_palm.jpg");
   background-size: cover;
   background-position: center;
-  padding: 150px 0;
+  padding: 80px 0;
   object-fit: cover;
 }
 
 .banner h1 {
   margin: 0;
-  margin-bottom: 10px;
+  margin-bottom: 80px;
+  margin-top: 0;
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-size: 50px;
@@ -35,7 +36,7 @@
 }
 
 .banner #addcocktail {
-  margin-top: 40px;
+  margin-top: 50px;
   margin-bottom: 0;
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);

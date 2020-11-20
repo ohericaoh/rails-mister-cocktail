@@ -9,12 +9,14 @@
       <div class="container">
       <div class="row">
       <% @cocktails.each do |cocktail| %>
-      <div class="card-trip col-md-6 box">
+      <div class="card-trip col-lg-4 box">
         <img src="https://www.liquor.com/thmb/C3dFiGybKy_6KXRQP4yh-sVR4nE=/960x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/__opt__aboutcom__coeus__resources__content_migration__liquor__2017__12__20073201__white-russian-720x720-article-cbe4b9a832c64f8da0bb09407caefa7f.jpg" />
           <div class="card-trip-infos">
           <div>
             <h2><%= cocktail.name %></h2>
-            <p><%= link_to 'Description', cocktail %></p>
+            <p><%= link_to 'Description', cocktail %>
+              <%#= link_to 'Delete', cocktail, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </p>
           </div>
           </div>
       </div>
